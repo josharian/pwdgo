@@ -79,7 +79,9 @@ func main() {
 		check(err)
 
 		modulePath = f.Module.Mod.Path
-		goVersion = f.Go.Version
+		if f.Go != nil {
+			goVersion = f.Go.Version
+		}
 	}
 
 	if verbose >= 2 {
